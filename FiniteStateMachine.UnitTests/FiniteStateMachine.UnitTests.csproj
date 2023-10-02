@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FiniteStateMachine.FsmParser\FiniteStateMachine.FsmParser.csproj" />
     <ProjectReference Include="..\FiniteStateMachine.StatePattern\FiniteStateMachine.StatePattern.csproj" />
   </ItemGroup>
 
