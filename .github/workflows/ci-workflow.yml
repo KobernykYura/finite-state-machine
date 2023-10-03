@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET $DOTNET_VERSION
+    - name: Setup .NET ${{ DOTNET_VERSION }}
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: $DOTNET_VERSION
+        dotnet-version: ${{ DOTNET_VERSION }}
     - name: Restore Nuget Dependencies
       run: dotnet restore
     - name: Build
