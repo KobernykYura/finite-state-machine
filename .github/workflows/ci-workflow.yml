@@ -4,8 +4,7 @@ run-name: .NET workflow CI
 env:
    DOTNET_VERSION: 7.0.x
 
-on:
-  [ push, pull_request ]
+on: [ push ]
 
 jobs:
   build:
