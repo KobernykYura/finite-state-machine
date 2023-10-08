@@ -1,28 +1,10 @@
 ﻿using FiniteStateMachine.FsmParser.Interfaces;
+using FiniteStateMachine.UnitTests.Spies;
 
 namespace FiniteStateMachine.UnitTests.Fixtures
 {
-    public class CollectorSelfShunt : ITokenCollector
+    public class CollectorSelfShunt : ActionsSpy, ITokenCollector
     {
-        private IList<string> _tokens = new List<string>();
-
-        /// <summary>
-        /// Getter of the spied calls of the collector.
-        /// </summary>
-        protected string SpyOutput
-        {
-            get => string.Join(',', this._tokens);
-            private set
-            {
-                if (value is null)
-                    throw new ArgumentNullException(nameof(value));
-
-                this._tokens.Add(value);
-            }
-        }
-
-        protected void Clear() => this._tokens.Clear();
-
         public void ClosedAngle(int line, int pos)
         {
             this.SpyOutput = "CA";
